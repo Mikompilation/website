@@ -1,7 +1,8 @@
 site_name: Mikompilation
 site_url: https://www.mikompilation.com
-site_description: Research project to reimplement Fatal Frame 2
+site_description: Research project to reimplement Fatal Frame
 site_author: wagrenier
+site_coauthor: weirdbeardgame
 
 repo_url: https://github.com/wagrenier/Mikompilation
 edit_uri: blob/main/docs
@@ -9,14 +10,23 @@ edit_uri: blob/main/docs
 nav:
   - Home: index.md
   - Build: Build.md
-  - Engine: 
-      - Engine/Engine.md
-      - 3D:
-        - SGD: Engine/3D/SGD.md
-  - Game:
-      - GPhaseSytem: Game/GPhaseSystem.md
 
-theme: 
+  - Fatal Frame 1:
+      - Engine:
+          - Fatal_Frame_1/Engine
+      - Game:
+          - Game: Fatal_Frame_1/Game/Game.md
+          - Ingame: Fatal_Frame_1/Game/Ingame/Ingame.md
+
+  - Fatal Frame 2:
+      - Engine:
+          - Fatal_Frame_2/Engine/Engine.md
+          - 3D:
+              - SGD: Fatal_Frame_2/Engine/3D/SGD.md
+      - Game:
+          - GPhaseSytem: Fatal_Frame_2/Game/GPhaseSystem.md
+
+theme:
   name: material
   logo: img/angry_noise_sae.png
   favicon: img/favicon.ico

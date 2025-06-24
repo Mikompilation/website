@@ -1,15 +1,16 @@
 # Summary
 
-The gaame uses a `GPhaseSystem` to split the logic into game sections. It is located under the [gphase.cpp](https://github.com/wagrenier/Mikompilation/blob/main/zero_rom/zero2np/src/main/gphase.cpp) file. Please take not that all the following information is pulled from the EU version. The EU version has a few more states than the US/JP versions:
+The game uses a `GPhaseSystem` to split the logic into game sections. It is located under the [gphase.cpp](https://github.com/Mikompilation/Minakami/blob/main/src/main/gphase.c) file. Please note that all of the following information is pulled from the PAL version of the game. The PAL version has a few more states than the NTSC versions:
 
-1. A language selection upon first boot
-2. A screen refresh rate selector
-3. A boot video of Ubisoft's logo
+### PAL Specific States:
+1. A language selection upon first boot (`GID_LANGSEL_MAIN`)
+2. A screen refresh rate selector (`GID_TITLE_FRAMERATE_SEL`)
+3. A boot video of Ubisoft's logo (`GID_TITLE_MOVE_MOVIE`)
 
 ## Basic Components
 ### Game Phases
 
-In Fatal Frame 2, a `Game Phase (GPhase)` represents the current action (phase) the game is currently performing. Each phase serves to handle a particular part of the game such as loading the game, menu traversal, selecting a lanaguage, and so on... A `GPhase` is represented by a `GPHASE_ID_ENUM`, an enum that contains all possible game phases (see list below). Those phases also have handler functions that will contain all code to perform the action!
+In Fatal Frame 2, a `Game Phase (GPhase)` represents the current action `(phase)` the game is currently performing. Each phase serves to handle a particular part of the game such as loading the game, menu traversal, selecting a lanaguage, and so on... A `GPhase` is represented by a `GPHASE_ID_ENUM`, an enum that contains all possible game phases (see list below). Those phases also have handler functions that will contain all code to perform the action!
 
 <details>
 <summary>List Of GPhases</summary>
@@ -252,7 +253,7 @@ Take note that the `SUPER GPHASE (GID_SUPER)` is at **position 0/ is the first e
 
 ## Structured GPhase Data
 
-### Structure Definitions
+### Structure Definitions:
 #### GPHASE_DAT
 
 The `GPHASE_DAT` structure contains all information related to a game phase. The layer indicates to which layer a game phase belongs to. `superID` indicates the parent of that phase. `son_ID` indicates the child of a game phase and `son_num` indicates how many children a game phase has.
